@@ -4,8 +4,6 @@ import ProjectListItem from "./ProjectListItem.astro";
 // Placeholder projects
 const projectsResponse = await fetch('https://hangar.papermc.dev/api/v1/projects');
 const projects = await projectsResponse.json();
-
-console.log(projects);
 ---
 
 <nav class="flex flex-col gap-2 w-full">

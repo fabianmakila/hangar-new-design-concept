@@ -1,23 +1,31 @@
 ---
+import IconValuePair from "./IconValuePair.astro";
+
 const { project } = Astro.props;
+const lastUpdated = new Date(project.lastUpdated);
+const lastUpdatedDateTime = lastUpdated.toLocaleDateString() + " " + lastUpdated.toLocaleTimeString();
 ---
 
-<a href="/project" class="bg-zinc-900 flex p-4 gap-4 rounded">
-    <img src={project.avatarUrl} alt="" class="h-24 rounded">
+<div class="bg-zinc-900 flex p-4 gap-4 rounded">
+    <a href="/project">
+        <img src={project.avatarUrl} alt="" class="w-24 rounded">
+    </a>
     <div class="w-full">
-        <div class="flex justify-between">
+        <div class="flex flex-col justify-between h-full">
             <div>
-                <h2 class="font-bold">{project.name}</h2>
+                <p class="flex gap-2 items-center">
+                    <a href="/project" class="font-bold text-xl">{project.name}</a>
+                    by
+                    <a class="inline-flex text-blue-500" href="/user/">{project.namespace.owner}</a>
+                </p>
                 <p>{project.description}</p>
             </div>
-            <div class="text-zinc-500 flex flex-col text-right">
-                <div>{project.stats.stars}</div>
-                <dir>{project.stats.downloads}</dir>
+            <div class="text-zinc-500 flex text-right gap-4">
+                <IconValuePair name="fa6-solid:list" value={project.category} />
+                <IconValuePair name="fa6-solid:star" value={project.stats.stars} />
+                <IconValuePair name="fa6-solid:download" value={project.stats.downloads} />
+                <IconValuePair name="fa6-solid:clock" value={lastUpdatedDateTime} />
             </div>
         </div>
-        <div class="flex justify-between text-zinc-500">
-            <div>{project.category}</div>
-            <div>{project.lastUpdated}</div>
-        </div>
     </div>
-</a>
+</div>
