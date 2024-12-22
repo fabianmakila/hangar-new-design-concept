@@ -1,0 +1,87 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+
+
+<div class="flex flex-col">
+    <button class="bg-zinc-800 p-4 flex items-center justify-between gap-4 rounded-t">
+        <h2>Filters</h2>
+        <Icon name="fa6-solid:chevron-down" />
+    </button>
+    <div class="p-4 flex flex-col gap-4 text-nowrap rounded-b bg-zinc-900">
+        <div>
+            <h3 class="font-bold">Platform</h3>
+            <div class="flex gap-2">
+                <input type="radio" name="paper" id="filterPlatformPaper">
+                <label for="filterPlatformPaper">Paper</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="radio" name="velocity" id="filterPlatformVelocity">
+                <label for="filterPlatformVelocity">Velocity</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="radio" name="waterfall" id="filterPlatformWaterfall">
+                <label for="filterPlatformWaterfall">Waterfall</label>
+            </div>
+        </div>
+        <div>
+            <h3 class="font-bold">Tags</h3>
+            <div class="flex gap-2">
+                <input type="checkbox" name="addon" id="filterTagsAddon">
+                <label for="filterTagsAddon">Addon</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="library" id="filterTagsLibrary">
+                <label for="filterTagsLibrary">Library</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="folia" id="filterTagsFolia">
+                <label for="filterTagsFolia">Supports Folia</label>
+            </div>
+        </div>
+        <div>
+            <h3 class="font-bold">Categories</h3>
+            <div class="flex gap-2">
+                <input type="checkbox" name="admin-tools" id="filterCategoryAdminTools">
+                <label for="filterCategoryAdminTools">Admin Tools</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="chat" id="filterCategoryChat">
+                <label for="filterCategoryChat">Chat</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="developer-tools" id="filterCategoryDeveloperTools">
+                <label for="filterCategoryDeveloperTools">Developer Tools</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="economy" id="filterCategoryEconomy">
+                <label for="filterCategoryEconomy">Economy</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="gameplay" id="filterCategoryGameplay">
+                <label for="filterCategoryGameplay">Gameplay</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="games" id="filterCategoryGames">
+                <label for="filterCategoryGames">Games</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="protection" id="filterCategoryProtection">
+                <label for="filterCategoryProtection">Protection</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="role-playing" id="filterCategoryRolePlaying">
+                <label for="filterCategoryRolePlaying">Role Playing</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="world-management" id="filterCategoryWorldManagement">
+                <label for="filterCategoryWorldManagement">World Management</label>
+            </div>
+            <div class="flex gap-2">
+                <input type="checkbox" name="miscellaneous" id="filterCategoryMiscellaneous">
+                <label for="filterCategoryMiscellaneous">Miscellaneous</label>
+            </div>
+        </div>
+    </div>
+</div>
