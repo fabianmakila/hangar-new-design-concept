@@ -1,6 +1,13 @@
 ---
 import Navbar from "./Navbar.astro";
+import { Icon } from 'astro-icon/components'
 ---
 <header>
+    <div class="text-center bg-yellow-600 px-4 py-2 flex items-center">
+        <p class="w-full">This is a WIP concept for a new Hangar design and might not make it into production.</p>
+        <button class="ml-auto text-xl">
+            <Icon name="fa6-solid:xmark" />
+        </button>
+    </div>
     <Navbar />
 </header>
