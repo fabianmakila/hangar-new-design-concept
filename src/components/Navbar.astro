@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.svg';
+---
+
+<div class="flex justify-between p-2">
+    <div>
+        <Image src={logo} alt="" class="h-8 w-auto" />
+    </div>
+    <div class="bg-zinc-900 rounded border-zinc-800 border-2">
+        <input type="text" placeholder="Search" class="bg-transparent p-2">
+    </div>
+    <div>
+        <button>
+            FabianAdrian
+            <img src="https://placehold.co/200" class="inline-block h-8 w-auto" />
+        </button>
+    </div>
+</div>
