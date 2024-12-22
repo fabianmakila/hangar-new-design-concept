@@ -1,5 +1,24 @@
 ---
 import { Icon } from 'astro-icon/components'
+
+const platforms = ["paper", "velocity", "waterfall"];
+const tags = ["Addon", "Library", "Supports Folia"];
+const categories = [
+    "Admin Tools",
+    "Chat",
+    "Developer Tools",
+    "Economy",
+    "Gameplay",
+    "Games",
+    "Protection",
+    "Role Playing",
+    "World Management",
+    "Miscellaneous"
+    ];
+
+function capitalize(string) {
+    return String(string).charAt(0).toUpperCase() + String(string).slice(1);
+}
 ---
 
 <div class="flex flex-col w-full md:w-auto md:sticky top-4">
@@ -10,76 +29,45 @@ import { Icon } from 'astro-icon/components'
     <div class="p-4 flex flex-col gap-4 text-nowrap rounded-b bg-zinc-900">
         <div>
             <h3 class="font-bold">Platform</h3>
-            <div class="flex gap-2">
-                <input type="radio" name="platform" id="filterPlatformPaper">
-                <label for="filterPlatformPaper">Paper</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="radio" name="platform" id="filterPlatformVelocity">
-                <label for="filterPlatformVelocity">Velocity</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="radio" name="platform" id="filterPlatformWaterfall">
-                <label for="filterPlatformWaterfall">Waterfall</label>
-            </div>
+            {
+                platforms.map((platform) => {
+                    const platformId = "filterPlatform" + capitalize(platform);
+                    return (
+                    <div class="flex gap-2">
+                        <input type="radio" name="platform" id={platformId} />
+                        <label class="capitalize" for={platformId}>{platform}</label>
+                    </div>
+                    )
+                })
+            }
         </div>
         <div>
             <h3 class="font-bold">Tags</h3>
-            <div class="flex gap-2">
-                <input type="checkbox" name="tags" id="filterTagsAddon">
-                <label for="filterTagsAddon">Addon</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="tags" id="filterTagsLibrary">
-                <label for="filterTagsLibrary">Library</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="tags" id="filterTagsFolia">
-                <label for="filterTagsFolia">Supports Folia</label>
-            </div>
+            {
+                tags.map(tag => {
+                    const tagId = "filterTags" + capitalize(tag);
+                    return (
+                    <div class="flex gap-2">
+                        <input type="checkbox" name="tags" id={tagId} />
+                        <label class="capitalize" for={tagId}>{tag}</label>
+                    </div>
+                    )
+                })
+            }
         </div>
         <div>
             <h3 class="font-bold">Categories</h3>
-            <div class="flex gap-2">
-                <input type="checkbox" name="category" id="filterCategoryAdminTools">
-                <label for="filterCategoryAdminTools">Admin Tools</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="category" id="filterCategoryChat">
-                <label for="filterCategoryChat">Chat</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="category" id="filterCategoryDeveloperTools">
-                <label for="filterCategoryDeveloperTools">Developer Tools</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="category" id="filterCategoryEconomy">
-                <label for="filterCategoryEconomy">Economy</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="category" id="filterCategoryGameplay">
-                <label for="filterCategoryGameplay">Gameplay</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="category" id="filterCategoryGames">
-                <label for="filterCategoryGames">Games</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="category" id="filterCategoryProtection">
-                <label for="filterCategoryProtection">Protection</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="category" id="filterCategoryRolePlaying">
-                <label for="filterCategoryRolePlaying">Role Playing</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="category" id="filterCategoryWorldManagement">
-                <label for="filterCategoryWorldManagement">World Management</label>
-            </div>
-            <div class="flex gap-2">
-                <input type="checkbox" name="category" id="filterCategoryMiscellaneous">
-                <label for="filterCategoryMiscellaneous">Miscellaneous</label>
-            </div>
+            {
+                categories.map(category => {
+                    const categoryId = "filterCategory" + capitalize(category);
+                    return (
+                    <div class="flex gap-2">
+                        <input type="checkbox" name="category" id={categoryId} />
+                        <label class="capitalize" for={categoryId}>{category}</label>
+                    </div>
+                    )
+                })
+            }
         </div>
     </div>
 </div>
