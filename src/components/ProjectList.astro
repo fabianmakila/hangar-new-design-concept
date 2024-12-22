@@ -6,10 +6,21 @@ const projectsResponse = await fetch('https://hangar.papermc.dev/api/v1/projects
 const projects = await projectsResponse.json();
 ---
 
-<nav class="flex flex-col gap-2 w-full">
-    {
-        projects.result.map((project) => (
-            <ProjectListItem project={project} />
-        ))
-    }
-</nav>
+<div class="flex flex-col gap-4 items-center">
+    <nav class="flex flex-col gap-2 w-full">
+        {
+            projects.result.map((project) => (
+                <ProjectListItem project={project} />
+            ))
+        }
+    </nav>
+    <div class="inline-flex rounded bg-zinc-900">
+        <a class="py-2 px-4 hover:bg-blue-500 rounded-l" href="">Previous</a>
+        <a class="py-2 px-4 hover:bg-blue-500 bg-blue-500" href="">1</a>
+        <a class="py-2 px-4 hover:bg-blue-500" href="">2</a>
+        <a class="py-2 px-4 hover:bg-blue-500" href="">3</a>
+        <p class="py-2 px-4 hover:bg-blue-500">...</p>
+        <a class="py-2 px-4 hover:bg-blue-500" href="">42</a>
+        <a class="py-2 px-4 hover:bg-blue-500 rounded-r" href="">Next</a>
+    </div>
+</div>
