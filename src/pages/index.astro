@@ -1,6 +1,7 @@
 ---
-import ProjectFilters from '../components/ProjectFilters.astro';
-import ProjectList from '../components/ProjectList.astro';
+import ProjectListFilters from '../components/project-list/ProjectListFilters.astro';
+import ProjectListSorting from '../components/project-list/ProjectListSorting.astro';
+import ProjectList from '../components/project-list/ProjectList.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -14,7 +15,10 @@ import Layout from '../layouts/Layout.astro';
 			<p>Hangar allows you to find and download the best Paper plugins, Velocity plugins or Waterfall plugins for your Minecraft server</p>
 		</div>
 		<div class="flex flex-col gap-4 items-start md:flex-row">
-			<ProjectFilters />
+			<div class="flex flex-col gap-4 w-full">
+				<ProjectListSorting />
+				<ProjectListFilters />
+			</div>
 			<ProjectList />
 		</div>
 	</div>

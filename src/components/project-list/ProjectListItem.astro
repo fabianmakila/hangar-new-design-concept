@@ -1,5 +1,5 @@
 ---
-import IconValuePair from "./IconValuePair.astro";
+import IconValuePair from "../IconValuePair.astro";
 
 const { project } = Astro.props;
 const lastUpdated = new Date(project.lastUpdated);
@@ -20,7 +20,7 @@ const lastUpdatedDateTime = lastUpdated.toLocaleDateString() + " " + lastUpdated
                 </p>
                 <p class="text-sm">{project.description}</p>
             </div>
-            <div class="text-zinc-500 flex text-right gap-4">
+            <div class="text-zinc-500 flex text-right gap-4 text-sm">
                 <IconValuePair name="fa6-solid:list" value={project.category} />
                 <IconValuePair name="fa6-solid:star" value={project.stats.stars} />
                 <IconValuePair name="fa6-solid:download" value={project.stats.downloads} />
