@@ -4,16 +4,18 @@ import logo from "../assets/logo.svg";
 import { Icon } from "astro-icon/components";
 import TextInput from "./input/TextInput.astro";
 import IconValuePair from "./IconValuePair.astro";
+import Container from "./Container.astro";
 ---
 
-<div class="max-w-screen-xl mx-auto">
-    <div class="flex justify-between py-2 px-4 items-center">
-        <div class="flex items-center gap-2 font-bold text-xl">
+<Container>
+    <div class="p-2 flex gap-2 md:justify-between">
+        <button class="sm:hidden p-4 rounded hover:text-blue-500 hover:bg-zinc-800"><Icon name="fa6-solid:bars" /></button>
+        <div class="flex items-center gap-2 font-bold text-xl shrink-0">
             <Image src={logo} alt="" class="h-12 w-auto" />
-            <h2>Hangar</h2>
+            <h2 class="hidden md:inline">Hangar</h2>
         </div>
         <TextInput placeholder="Search" id="search" classList="max-w-xl" />
-        <div class="flex gap-4">
+        <div class="hidden sm:flex gap-4 shrink-0">
             <button class="relative hover:bg-zinc-900 p-2 rounded">
                 <Icon name="fa6-solid:bell" class="text-2xl" />
                 <div
@@ -46,7 +48,7 @@ import IconValuePair from "./IconValuePair.astro";
             </nav>
         </div>
     </div>
-</div>
+</Container>
 
 <script>
     import { createPopper } from "@popperjs/core";
