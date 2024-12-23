@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
+import IconValuePair from '../IconValuePair.astro';
 
 const platforms = ["paper", "velocity", "waterfall"];
 const tags = ["Addon", "Library", "Supports Folia"];
@@ -22,11 +23,13 @@ function capitalize(string) {
 ---
 
 <div class="flex flex-col md:sticky top-4">
-    <button class="bg-zinc-800 px-4 py-2 flex items-center justify-between gap-4 rounded-t">
-        <h2 class="font-bold">Filters</h2>
+    <button id="toggleFilterMenu" class="bg-zinc-800 px-4 py-2 flex items-center justify-between gap-4 rounded hover:text-blue-500 hover:bg-zinc-700">
+        <h2 class="font-bold">
+            <IconValuePair name="fa6-solid:list" value="Filters" />
+        </h2>
         <Icon name="fa6-solid:chevron-down" />
     </button>
-    <div class="p-4 flex flex-col gap-4 text-nowrap rounded-b bg-zinc-900">
+    <div id="filterMenu" class="p-4 flex flex-col gap-4 text-nowrap rounded-b bg-zinc-900">
         <div>
             <h3 class="font-bold text-gray-500 text-sm">Platform</h3>
             {
@@ -71,3 +74,18 @@ function capitalize(string) {
         </div>
     </div>
 </div>
+
+<script>
+    const toggleFilterMenuButton = document.querySelector("#toggleFilterMenu");
+    const filterMenu = document.querySelector("#filterMenu");
+
+    function toggleFilterMenu() {
+        if (filterMenu?.classList.contains('hidden')) {
+            filterMenu?.classList.remove('hidden')
+        } else {
+            filterMenu?.classList.add('hidden');
+        }
+    }
+
+    toggleFilterMenuButton.addEventListener('click', toggleFilterMenu);
+</script>
