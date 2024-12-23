@@ -28,7 +28,7 @@ function capitalize(string) {
     </button>
     <div class="p-4 flex flex-col gap-4 text-nowrap rounded-b bg-zinc-900">
         <div>
-            <h3 class="font-bold text-gray-500">Platform</h3>
+            <h3 class="font-bold text-gray-500 text-sm">Platform</h3>
             {
                 platforms.map((platform) => {
                     const platformId = "filterPlatform" + capitalize(platform);
@@ -42,7 +42,7 @@ function capitalize(string) {
             }
         </div>
         <div>
-            <h3 class="font-bold text-gray-500">Tags</h3>
+            <h3 class="font-bold text-gray-500 text-sm">Tags</h3>
             {
                 tags.map(tag => {
                     const tagId = "filterTags" + capitalize(tag);
@@ -56,7 +56,7 @@ function capitalize(string) {
             }
         </div>
         <div>
-            <h3 class="font-bold text-gray-500">Categories</h3>
+            <h3 class="font-bold text-gray-500 text-sm">Categories</h3>
             {
                 categories.map(category => {
                     const categoryId = "filterCategory" + capitalize(category);
