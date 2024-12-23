@@ -1,0 +1,5 @@
+---
+const { placeholder, name, id, classList } = Astro.props
+---
+
+<input class={"p-2 w-full text-center bg-zinc-900 rounded border-zinc-800 border-2 outline-blue-500 focus:outline outline-2 " + classList} type="text" name={name} id={id} placeholder={placeholder}>
