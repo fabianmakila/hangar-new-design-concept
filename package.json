@@ -1,21 +1,23 @@
 {
-  "name": "hangar",
+  "name": "nuxt-app",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --host",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.4",
-    "@fontsource/poppins": "^5.1.0",
-    "@iconify-json/fa6-solid": "^1.2.3",
-    "@iconify-json/mdi": "^1.2.2",
-    "@popperjs/core": "^2.11.8",
-    "astro": "^5.1.1",
-    "astro-icon": "^1.1.4",
-    "tailwindcss": "^3.4.17"
+    "@nuxt/icon": "^1.10.3",
+    "@nuxtjs/color-mode": "^3.5.2",
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "nuxt": "^3.15.0",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@iconify-json/fa6-solid": "^1.2.3"
   }
 }
